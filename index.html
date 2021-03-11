@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Schedule Planner</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div class="card">
+    <div class="wrap">
+      <h1>Course Schedule Planner</h1>
+      <h4>Plan Your Degree and schedeule Your Courses</h4>
+      <form id="course-form">
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" name="subject" id="subject">
+        </div>
+
+        <div class="form-group">
+          <label for="instructor">Instructor/Professor</label>
+          <input type="text" name="instructor" id="instructor">
+        </div>
+
+        <div class="form-group">
+          <label for="term">Term/Semester</label>
+          <input type="text" name="subject" id="subject">
+        </div>
+
+        <div class="form-group">
+          <input type="submit" value="ADD/Submit" class="btn">
+        </div>
+
+      </form>
+
+      <!-- tables -->
+      <table class="courses-tbl">
+        <tr>
+          <th>Subject</th>
+          <th>Instructor/Professor</th>
+          <th>Term/Semester</th>
+        </tr>
+        <tbody class="courses-list"></tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
