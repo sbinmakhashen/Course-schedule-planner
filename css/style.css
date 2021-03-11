@@ -83,7 +83,25 @@ body {
   text-align: center;
 }
 
-.courses-tbl .courses-list td{
+.courses-tbl .course-list td{
   border-bottom: 1px solid #bebebe;
   padding: 1rem 0;
+}
+
+/* alert message */
+.alert {
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: .4rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.success {
+  background: green;
+}
+
+.error {
+  background: rgb(148, 5, 5);
 }
