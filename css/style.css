@@ -105,3 +105,14 @@ body {
 .error {
   background: rgb(148, 5, 5);
 }
+
+.delete {
+  cursor: pointer;
+  color: red;
+  font-size: 1.2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.delete:hover {
+  opacity: 0.5;
+}

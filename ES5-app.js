@@ -36,14 +36,14 @@ UI.prototype.setMessage = function (msg, className) {
 UI.prototype.dispCourse = function (course) {
   // creating a new Element
   const tRow = document.createElement('tr');
-  // getting parent element to insert new element in
+  // getting parent element to insert new element 
   const list = document.querySelector('.course-list');
   // adding innerHTML..
   tRow.innerHTML = `
   <td>${course.subject}</td>
   <td>${course.instructor}</td>
   <td>${course.term}</td>
-  <td><i class="fas fa-window-close"></i></td>
+  <td><i class="fas fa-window-close delete"></i></td>
   `;
   
   // appending the new element into list element
@@ -57,6 +57,14 @@ UI.prototype.clrInputs = function () {
   document.getElementById('instructor').value = '';
   document.getElementById('term').value = '';
 }
+
+// deleting the added books from our course list 
+// UI.prototype.deleteCourse = function(e) {
+//   if (e.className === 'delete') {
+//     e.parentElement.parentElement.remove();
+//   }
+// }
+ 
 
 
 // Listen for submit
@@ -84,3 +92,17 @@ document.getElementById('course-form').addEventListener('submit', function (e) {
   e.preventDefault();
 });
 
+
+document.querySelector('.course-list').addEventListener('click', function (e) {
+  // get the UI that have the prototype of deleteBook that we have created
+  const ui = new UI();
+  // get the " deleteBook " method we have created
+  // ui.deleteCourse(e.target);
+  // show message after deleting the book
+  ui.setMessage('Course successfullly deleted!!', 'success');
+  const del = document.querySelector('.delete');//.parentElement.parentElement;
+  del.remove();
+  
+
+  e.preventDefault();
+  });
