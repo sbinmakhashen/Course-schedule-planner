@@ -33,15 +33,29 @@ UI.prototype.setMessage = function (msg, className) {
 }
 
 // display courses when added in the UI
-UI.prototype.dispCourse = function (subject, instructor, term) {
+UI.prototype.dispCourse = function (course) {
   // creating a new Element
   const tRow = document.createElement('tr');
   // getting parent element to insert new element in
-  const list = document.getElementById('course-list');
-  // appending the new element into list element
-  tRow.appendChild(list);
+  const list = document.querySelector('.course-list');
   // adding innerHTML..
+  tRow.innerHTML = `
+  <td>${course.subject}</td>
+  <td>${course.instructor}</td>
+  <td>${course.term}</td>
+  <td><i class="fas fa-window-close"></i></td>
+  `;
+  
+  // appending the new element into list element
+  list.appendChild(tRow);
+  // console.log(tRow);
+}
 
+// clearing input fields everytime we add a course
+UI.prototype.clrInputs = function () {
+  document.getElementById('subject').value = '';
+  document.getElementById('instructor').value = '';
+  document.getElementById('term').value = '';
 }
 
 // Listen for submit
@@ -51,14 +65,19 @@ document.getElementById('course-form').addEventListener('submit', function (e) {
     instructor = document.getElementById('instructor').value,
     term = document.getElementById('term').value;
   // call the COurse constructor
-  const course = new Course();
+  const course = new Course(subject, instructor, term);
   // caaling the ui constructor
   const ui = new UI();
   // Check to see if input fields are empty
   if (subject === '' || instructor === '' || term === '') {
     ui.setMessage('Please fill in the empty input fields!!', 'error');
   } else {
-    ui.setMessage('Course added successfully!!', 'success')
+    // adding course to UI list 
+    ui.dispCourse(course);
+    // display the messsage below when course added successfully 
+    ui.setMessage('Course added successfully!!', 'success');
+    // clearing input fields everytime we added a new classes || for UX
+    ui.clrInputs();
   }
   // prevent the defualt behaivor
   e.preventDefault();
