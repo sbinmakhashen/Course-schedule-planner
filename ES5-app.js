@@ -59,11 +59,10 @@ UI.prototype.clrInputs = function () {
 }
 
 // deleting the added books from our course list 
-// UI.prototype.deleteCourse = function(e) {
-//   if (e.className === 'delete') {
-//     e.parentElement.parentElement.remove();
-//   }
-// }
+UI.prototype.deleteCourse = function(e) {
+  const del = document.querySelector('.delete').parentElement.parentElement;
+  del.remove();
+}
  
 
 
@@ -97,12 +96,8 @@ document.querySelector('.course-list').addEventListener('click', function (e) {
   // get the UI that have the prototype of deleteBook that we have created
   const ui = new UI();
   // get the " deleteBook " method we have created
-  // ui.deleteCourse(e.target);
+  ui.deleteCourse(e.target);
   // show message after deleting the book
-  ui.setMessage('Course successfullly deleted!!', 'success');
-  const del = document.querySelector('.delete');//.parentElement.parentElement;
-  del.remove();
-  
-
+  ui.setMessage('Course successfullly deleted!!', 'deleteRow');
   e.preventDefault();
   });

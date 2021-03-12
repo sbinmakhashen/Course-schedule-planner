@@ -106,6 +106,10 @@ body {
   background: rgb(148, 5, 5);
 }
 
+.deleteRow {
+  background: #830d0d;
+}
+
 .delete {
   cursor: pointer;
   color: red;
