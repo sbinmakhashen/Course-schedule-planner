@@ -58,6 +58,7 @@ UI.prototype.clrInputs = function () {
   document.getElementById('term').value = '';
 }
 
+
 // Listen for submit
 document.getElementById('course-form').addEventListener('submit', function (e) {
   // creating vars to get the field inputs
