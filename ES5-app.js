@@ -45,7 +45,7 @@ UI.prototype.dispCourse = function (course) {
   <td>${course.term}</td>
   <td><i class="fas fa-window-close delete"></i></td>
   `;
-  
+
   // appending the new element into list element
   list.appendChild(tRow);
   // console.log(tRow);
@@ -59,11 +59,11 @@ UI.prototype.clrInputs = function () {
 }
 
 // deleting the added books from our course list 
-UI.prototype.deleteCourse = function(e) {
+UI.prototype.deleteCourse = function (e) {
   const del = document.querySelector('.delete').parentElement.parentElement;
   del.remove();
 }
- 
+
 
 
 // Listen for submit
@@ -100,4 +100,4 @@ document.querySelector('.course-list').addEventListener('click', function (e) {
   // show message after deleting the book
   ui.setMessage('Course successfullly deleted!!', 'deleteRow');
   e.preventDefault();
-  });
+});
